@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply no-underline;
+  }
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    @apply text-black;
+  }
+  [type="text"],
+  [type="tel"],
+  [type="email"] {
+    @apply text-black;
+  }
+  select {
+    @apply text-black;
+  }
+
+  input {
+    @apply focus:outline-none bg-transparent text-black;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
+
+@layer utilities {
+  .modal-open {
+    @apply overflow-hidden;
+  }
+}
+
+/* transition animations */
+
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-opacity duration-200;
+}
+
+.fade-enter,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+.list-offset-enter,
+.list-offset-leave-to {
+  @apply opacity-0 -translate-x-full;
+}
+.list-offset-leave-active {
+  @apply absolute;
+}
+
+.list-complete-enter,
+.list-complete-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-complete-leave-active {
+  position: absolute;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.3s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* transition animations */
+
+:host {
+  --rem: 16px;
+  --font-bold: 700;
+  --white: #fff;
+}
