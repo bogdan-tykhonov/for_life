@@ -1,0 +1,118 @@
+<template>
+  <div>
+    <section>
+      <div class="bg-stop-war px-10 py-6 text-white bg-cover h-[540px] flex flex-col justify-end">
+        <p
+          class="text-5xl font-bold mb-3"
+          v-text="$t('volunteer_team')"
+        />
+
+        <p
+          class="text-lg font-bold"
+          v-text="$t('main_text')"
+        />
+      </div>
+    </section>
+
+    <HelpSection class="mt-8" />
+
+    <Subtitle
+      class="my-8"
+      :title="$t('programs')"
+    />
+
+    <div class="flex gap-5 text-white">
+      <router-link
+        :to="{
+          name: 'Programs'
+        }"
+        tag="div"
+        class="bg-[url('./img/programe_1.jpeg')] bg-cover h-[600px] flex items-end w-full hover:scale-90 transition-transform duration-300"
+      >
+        <p
+          class="p-10 font-bold text-4xl"
+          v-text="$t('military_help')"
+        />
+      </router-link>
+
+      <router-link
+        :to="{
+          name: 'Programs'
+        }"
+        tag="div"
+        class="bg-[url('./img/programe_2.jpeg')] bg-cover h-[600px] flex items-end w-full hover:scale-90 transition-transform duration-300"
+      >
+        <p
+          class="p-10 font-bold text-4xl"
+          v-text="$t('help')"
+        />
+      </router-link>
+    </div>
+
+    <Documents class="my-8" />
+
+    <Subtitle
+      class="my-8"
+      :title="$t('reports')"
+    />
+
+    <BlockLayout class="!px-10 text-4xl font-bold gap-30">
+      <a
+        class="w-[300px] h-18"
+        href="https://t.me/forlife_ua"
+      >
+        <button class="bg-primary flex-center w-full h-full text-white rounded-lg hover:bg-primary-hover transition-colors duration-200">
+          Telegram
+          <TelegramIcon class="ml-3" />
+        </button>
+      </a>
+
+      <p
+        class="text-primary flex-1"
+        v-text="$t('reports_text')"
+      />
+    </BlockLayout>
+  </div>
+</template>
+
+<script>
+import TelegramIcon from '../components/icons/TelegramIcon';
+import BlockLayout from '../components/home/BlockLayout';
+import Documents from '../components/home/Documents';
+import Subtitle from '../components/ui/Subtitle';
+import HelpSection from '../components/home/HelpSection';
+import stopWarImg from '../img/stop.jpeg';
+
+export default { 
+  name: 'Home',
+  components: {
+    HelpSection,
+    Subtitle,
+    Documents,
+    BlockLayout,
+    TelegramIcon
+  },
+  data () {
+    return {
+      stopWarImg: stopWarImg
+    };
+  }
+};
+</script>
+
+<i18n>
+{
+  "ua": {
+    "volunteer_team": "Волонтерьска спільнота",
+    "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.",
+    "reports": "Звіти",
+    "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду"
+  },
+  "en": {
+    "volunteer_team": "Volunteer community",
+    "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.", 
+    "reports": "Reports",
+     "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
+  }
+}
+</i18n>

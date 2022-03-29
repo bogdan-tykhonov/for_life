@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
 @layer base {
   a {
     @apply no-underline;
@@ -41,7 +43,7 @@
 @layer utilities {
   .modal-open {
     @apply overflow-hidden;
-  }
+  } 
 }
 
 /* transition animations */
@@ -95,8 +97,29 @@
 
 /* transition animations */
 
+/* Vue slider */
+
+.carousel__prev, .carousel__next {
+  background-color: var(--theme-color-primary)!important;
+}
+
+.carousel__pagination-button {
+  background-color: var(--theme-color-primary) !important;
+  opacity: 0.5;
+}
+
+.carousel__pagination-button--active {
+  background-color: var(--theme-color-primary-hover)!important;
+  opacity: 1;
+}
+
 :host {
   --rem: 16px;
   --font-bold: 700;
   --white: #fff;
+}
+
+:root {
+  --theme-color-primary: #3c7bff;
+  --theme-color-primary-hover: #3B29FF;
 }

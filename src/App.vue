@@ -1,22 +1,26 @@
 <template>
-  <main class="w-[1270px] mx-auto">
-    <Header />
+  <Header class="text-black" />
+  
+  <main class="max-w-[1270px] mx-auto text-black">
+    <router-view />
   </main>
+
+  <Footer />
 </template>
 
 <script>
-import Header from './components/Header';
+import Footer from './components/Footer';
+import Header from './components/header/Header';
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
     
   },
   methods: {
-    test () {
-      const a = 123;
-    }
+    
   }
 };
 </script>

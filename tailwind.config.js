@@ -10,7 +10,7 @@ module.exports = {
     }),
     extend: {
       fontFamily: {
-        sans: ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans] //
+        sans: ['"Roboto"', ...defaultTheme.fontFamily.sans] //
       },
       spacing: {
         'minimal': 'calc(0.0625 * var(--rem, 16px))', //
@@ -87,7 +87,12 @@ module.exports = {
         118: 'calc(29.5 * var(--rem, 16px))'
       },
       colors: {
-        blue: '#3C7BFF'
+        black: 'var(--theme-color-black, #1D1D1B)',
+        primary: {
+          DEFAULT: 'var(--theme-color-primary, #3C7BFF)',
+          hover: 'var(--theme-color-primary-hover, #3B29FF)'
+        },
+        gray: '#E5E5E5'
       },
       fontSize: {
         '3xs': ['calc(0.5625 * var(--rem, 16px))', {
@@ -148,6 +153,9 @@ module.exports = {
       lineHeight: {
         7: 'calc(1.75 * var(--rem, 16px))',
         9: 'calc(2.25 * var(--rem, 16px))'
+      },
+      backgroundImage: {
+        'stop-war': 'url(\'./img/stop.jpeg\')'
       }
     }
   },

@@ -20,16 +20,14 @@ module.exports = {
     'keyword-spacing': 'error',
     'space-before-function-paren': 'error',
     'space-infix-ops': 'error',
-    'comma-spacing': ['error', { 'before': false,
-      'after': true }],
+    'comma-spacing': ['error', { 'before': false, 'after': true }],
     'brace-style': 'error',
     'curly': 'error',
     'no-multiple-empty-lines': 'error',
     'operator-linebreak': 'error',
     'one-var': ['error', 'never'],
     'block-spacing': 'error',
-    'camelcase': ['error', {'properties': 'never',
-      'ignoreDestructuring': true }],
+    'camelcase': ['error', {'properties': 'never', 'ignoreDestructuring': true }],
     'comma-dangle': 'error',
     'comma-style': 'error',
     'dot-location': ['error', 'property'],
@@ -37,7 +35,6 @@ module.exports = {
     'func-call-spacing': ['error', 'never'],
     'key-spacing': 'error',
     'semi': ['error', 'always'],
-    'linebreak-style': ['error', 'unix'],
-    'object-property-newline': 'error'
+    'linebreak-style': ['error', 'unix']
   }
 };
