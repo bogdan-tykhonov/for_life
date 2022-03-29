@@ -4,13 +4,14 @@
 
     <BlockLayout>
       <BtnPrimary
-        class="text-4xl h-18"
+        class="text-4xl !h-17"
         :title="$t('want_help')"
       />
 
       <BtnPrimary
-        class="text-4xl h-18"
+        class="text-4xl !h-17"
         :title="$t('get_help')"
+        @click="showGetHelpModal"
       />
     </BlockLayout>
   </section>
@@ -26,6 +27,11 @@ export default {
     BtnPrimary,
     Subtitle,
     BlockLayout
+  },
+  methods: {
+    showGetHelpModal () {
+      this.emitter.emit('show-get-help-modal');
+    }
   }
 };
 </script>

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   lintOnSave: 'warning',
 
@@ -8,6 +10,8 @@ module.exports = {
       .type('javascript/auto')
       .use('i18n')
       .loader('@intlify/vue-i18n-loader');
+    config.resolve.alias
+      .set('@mixins', path.resolve(__dirname, 'src/mixins'));
   },
 
   pluginOptions: {

@@ -43,6 +43,7 @@ module.exports = {
         26: 'calc(6.5 * var(--rem, 16px))',
         27: 'calc(6.75 * var(--rem, 16px))',
         28: 'calc(7 * var(--rem, 16px))',
+        29: 'calc(7.25 * var(--rem, 16px))',
         30: 'calc(7.5 * var(--rem, 16px))',
         31: 'calc(7.75 * var(--rem, 16px))',
         32: 'calc(8 * var(--rem, 16px))',
@@ -92,7 +93,11 @@ module.exports = {
           DEFAULT: 'var(--theme-color-primary, #3C7BFF)',
           hover: 'var(--theme-color-primary-hover, #3B29FF)'
         },
-        gray: '#E5E5E5'
+        gray: {
+          DEFAULT: 'var(--theme-color-gray-transparent, #E5E5E5)',
+          transparent: 'var(--theme-color-gray-transparent, rgba(105, 105, 105, 0.68))',
+          border: 'var(--theme-color-gray-border, #C4C4C4)'
+        }
       },
       fontSize: {
         '3xs': ['calc(0.5625 * var(--rem, 16px))', {

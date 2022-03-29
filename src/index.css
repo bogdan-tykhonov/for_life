@@ -12,7 +12,7 @@
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    @apply text-black;
+    @apply text-black outline-none;
   }
   [type="text"],
   [type="tel"],
@@ -20,7 +20,7 @@
     @apply text-black;
   }
   select {
-    @apply text-black;
+    @apply text-black outline-none;
   }
 
   input {
