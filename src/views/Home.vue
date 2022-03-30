@@ -1,23 +1,23 @@
 <template>
   <div>
     <section>
-      <div class="bg-stop-war px-10 py-6 text-white bg-cover h-[540px] flex flex-col justify-end">
+      <div class="bg-stop-war-mob h-[250px] sm:h-[540px] bg-center lg:rounded-b-lg -mx-5 md:-mx-10 lg:mx-0 lg:bg-stop-war px-3 sm:px-10 py-3 sm:py-6 text-white bg-cover  flex flex-col justify-end">
         <p
-          class="text-5xl font-bold mb-3"
+          class="text-xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-3"
           v-text="$t('volunteer_team')"
         />
 
         <p
-          class="text-lg font-bold"
+          class="text-sm sm:text-base md:text-lg font-bold"
           v-text="$t('main_text')"
         />
       </div>
     </section>
-
-    <HelpSection class="mt-8" />
+ 
+    <HelpSection class="mt-4 sm:mt-8" />
 
     <Subtitle
-      class="my-8"
+      class="my-4 sm:my-8"
       :title="$t('programs')"
     />
 
@@ -27,12 +27,16 @@
           name: 'Programs'
         }"
         tag="div"
-        class="bg-[url('./img/programe_1.jpeg')] bg-cover h-[600px] flex items-end w-full hover:scale-90 transition-transform duration-300"
+        class="flex items-end rounded-md overflow-hidden w-full hover:scale-90 transition-transform duration-300"
       >
-        <p
-          class="p-10 font-bold text-4xl"
-          v-text="$t('military_help')"
-        />
+        <SquaredImage
+          class="flex items-end bg-[url('./img/programe_1.jpeg')]"
+        >
+          <p
+            class="p-3 sm:p-10 font-bold text-lg sm:text-4xl"
+            v-text="$t('military_help')"
+          />
+        </SquaredImage>
       </router-link>
 
       <router-link
@@ -40,23 +44,27 @@
           name: 'Programs'
         }"
         tag="div"
-        class="bg-[url('./img/programe_2.jpeg')] bg-cover h-[600px] flex items-end w-full hover:scale-90 transition-transform duration-300"
+        class="flex items-end rounded-md overflow-hidden w-full hover:scale-90 transition-transform duration-300"
       >
-        <p
-          class="p-10 font-bold text-4xl"
-          v-text="$t('help')"
-        />
+        <SquaredImage
+          class="flex items-end bg-[url('./img/programe_2.jpeg')]"
+        >
+          <p
+            class="p-3 sm:p-10 font-bold text-lg sm:text-4xl"
+            v-text="$t('help')"
+          />
+        </SquaredImage>
       </router-link>
     </div>
 
-    <Documents class="my-8" />
+    <Documents class="my-4 sm:my-8" />
 
     <Subtitle
-      class="my-8"
+      class="my-4 sm:my-8"
       :title="$t('reports')"
     />
 
-    <BlockLayout class="!px-10 text-4xl font-bold gap-30">
+    <BlockLayout class="sm:!px-10 text-2xl lg:text-4xl font-bold !gap-4 text-center lg:text-left lg:!gap-30 items-center flex-col-reverse lg:flex-row">
       <a
         class="w-[300px] h-18"
         href="https://t.me/forlife_ua"
@@ -68,7 +76,7 @@
       </a>
 
       <p
-        class="text-primary flex-1"
+        class="text-primary flex-1 text-lg sm:text-2xl"
         v-text="$t('reports_text')"
       />
     </BlockLayout>
@@ -76,6 +84,7 @@
 </template>
 
 <script>
+import SquaredImage from '../components/ui/SquaredImage';
 import TelegramIcon from '../components/icons/TelegramIcon';
 import BlockLayout from '../components/home/BlockLayout';
 import Documents from '../components/home/Documents';
@@ -90,7 +99,8 @@ export default {
     Subtitle,
     Documents,
     BlockLayout,
-    TelegramIcon
+    TelegramIcon,
+    SquaredImage
   },
   data () {
     return {

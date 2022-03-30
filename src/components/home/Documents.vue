@@ -2,8 +2,8 @@
   <section>
     <Subtitle :title="$t('documents')" />
 
-    <BlockLayout class="!px-10">
-      <Carousel :items-to-show="5">
+    <BlockLayout class="sm:!px-10">
+      <Carousel :items-to-show="itemsToShow">
         <Slide
           v-for="slide in 10"
           :key="slide"
@@ -46,7 +46,8 @@ export default {
   data () {
     return {
       docImg: DocImg,
-      lightbox: null
+      lightbox: null,
+      itemsToShow: window.innerWidth <= 768 ? 3 : 5
     };
   },
   mounted () {

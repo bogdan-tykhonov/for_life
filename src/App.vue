@@ -1,9 +1,12 @@
 <template>
   <Header class="text-black" />
   
-  <main class="max-w-[1270px] mx-auto text-black">
-    <router-view />
+  <main class="text-black">
+    <Container>
+      <router-view />
+    </Container>
   </main>
+
 
   <Footer />
 
@@ -11,6 +14,7 @@
 </template>
 
 <script>
+import Container from './components/ui/Container';
 import GetHelpModal from './components/modals/GetHelpModal';
 import Footer from './components/Footer';
 import Header from './components/header/Header';
@@ -20,7 +24,8 @@ export default {
   components: {
     Header,
     Footer,
-    GetHelpModal
+    GetHelpModal,
+    Container
     
   },
   mounted () {

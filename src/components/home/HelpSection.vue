@@ -2,18 +2,36 @@
   <section>
     <Subtitle :title="$t('title')" />
 
-    <BlockLayout>
+    <!-- Mob -->
+    <div class="flex mt-4 gap-3 flex-col sm:hidden">
       <BtnPrimary
-        class="text-4xl !h-17"
+        class="lg:text-4xl !h-17"
         :title="$t('want_help')"
       />
 
       <BtnPrimary
-        class="text-4xl !h-17"
+        class="lg:text-4xl !h-17 border border-primary bg-white text-primary hover:bg-white hover:border-primary-hover hover:text-primary-hover"
+        :title="$t('get_help')"
+        @click="showGetHelpModal"
+      />
+    </div>
+    <!-- Mob -->
+
+
+    <!-- Desktop -->
+    <BlockLayout class="hidden sm:flex">
+      <BtnPrimary
+        class="lg:text-4xl !h-17"
+        :title="$t('want_help')"
+      />
+
+      <BtnPrimary
+        class="lg:text-4xl !h-17"
         :title="$t('get_help')"
         @click="showGetHelpModal"
       />
     </BlockLayout>
+    <!-- Desktop -->
   </section>
 </template>
 

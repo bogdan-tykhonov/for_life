@@ -1,12 +1,12 @@
 <template>
-  <footer class="bg-primary text-white text-xl font-medium pt-8 pb-12 mt-8">
-    <section class="max-w-[1270px] mx-auto">
-      <nav class="flex gap-27">
-        <ul class="flex flex-col gap-4">
+  <footer class="bg-primary text-white text-lg sm:text-xl font-medium pt-8 pb-12 mt-8">
+    <Container>
+      <nav class="flex justify-between sm:gap-27">
+        <ul class="flex flex-col gap-2 sm:gap-4">
           <li
             v-for="(link, index) in routes"
             :key="`navLink${index}`"
-            class="text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
+            class="text-lg sm:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
           >
             <router-link
               :to="{
@@ -19,7 +19,7 @@
 
         <div>
           <p
-            class="mb-4"
+            class="mb-2 sm:mb-4"
             v-text="$t('our_links')"
           />
           <div class="flex gap-6">
@@ -45,7 +45,7 @@
         </div>
       </nav>
 
-      <div class="flex justify-between mt-20">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between mt-8">
         <a
           class="text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
           href="mailto:sakeoflifeua@gmail.com"
@@ -54,11 +54,12 @@
 
         <h3 v-text="$t('fond_name')" />
       </div>
-    </section>
+    </Container>
   </footer>
 </template>
 
 <script>
+import Container from './ui/Container';
 import TelegramIcon from './icons/TelegramIcon';
 import FacebookIcon from './icons/FacebookIcon';
 import InstagramIcon from './icons/InstagramIcon';
@@ -68,7 +69,8 @@ export default {
   components: {
     InstagramIcon,
     FacebookIcon,
-    TelegramIcon
+    TelegramIcon,
+    Container
   },
   computed: {
     routes () {

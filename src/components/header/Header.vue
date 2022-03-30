@@ -1,14 +1,14 @@
 <template>
-  <header class="py-15 border-b border-gray">
-    <div class="max-w-[1270px] mx-auto w-full flex items-center gap-10">
-      <LogoIcon />
+  <header class="py-5 lg:py-10 shadow-md border-b sticky top-0 bg-white z-10 border-gray">
+    <Container class="flex justify-between lg:justify-start lg:flex-col xl:flex-row items-center gap-5 xl:gap-10">
+      <LogoIcon class="w-1/2 sm:w-auto max-w-full" />
 
-      <nav class="flex-1 flex gap-15">
-        <ul class="flex flex-1 justify-between items-center">
+      <nav class="flex-1 gap-5 xl:gap-15 hidden lg:flex">
+        <ul class="flex flex-1 w-max xl:w-auto gap-5 justify-between items-center">
           <li
             v-for="(link, index) in routes"
             :key="`navLink${index}`"
-            class="text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
+            class="xl:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
             :class="{'text-primary hover:!opacity-100 ': link.active}"
           >
             <router-link
@@ -22,18 +22,32 @@
 
         <div class="flex gap-5">
           <BtnPrimary
-            class="!text-lg w-45"
+            class="!text-base xl:!text-lg w-42 xl:w-45"
             :title="$t('want_help')"
           />
 
           <LocaleSelect />
         </div>
       </nav>
-    </div>
+
+      <BarsIcon
+        class="cursor-pointer hover:text-primary-hover duration-200 lg:hidden transition-colors"
+        @click="showHamburgerMenu"
+      />
+
+      <HamburgerMenu
+        ref="hamburgerMenu"
+        class="lg:hidden"
+        :routes="routes"
+      />
+    </Container>
   </header>
 </template>
 
 <script>
+import BarsIcon from '../icons/BarsIcon';
+import HamburgerMenu from './HamburgerMenu';
+import Container from '../ui/Container';
 import LocaleSelect from './LocaleSelect';
 import BtnPrimary from '../ui/BtnPrimary';
 import LogoIcon from '../icons/LogoIcon';
@@ -43,7 +57,10 @@ export default {
   components: {
     LogoIcon,
     BtnPrimary,
-    LocaleSelect
+    LocaleSelect,
+    Container,
+    HamburgerMenu,
+    BarsIcon
   },
   computed: {
     routes () {
@@ -74,6 +91,14 @@ export default {
           active: this.$route.name === 'Contacts'
         }
       ];
+    }
+  },
+  mounted () {
+    this.showHamburgerMenu();
+  },
+  methods: {
+    showHamburgerMenu () {
+      this.$refs.hamburgerMenu.show();
     }
   }
 };

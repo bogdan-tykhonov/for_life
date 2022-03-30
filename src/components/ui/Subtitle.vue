@@ -1,6 +1,6 @@
 <template>
   <h3
-    class="text-primary font-bold text-4xl"
+    class="text-primary text-lg font-bold sm:text-4xl"
     v-text="title"
   />
 </template>

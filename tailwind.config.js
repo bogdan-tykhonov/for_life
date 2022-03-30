@@ -160,7 +160,8 @@ module.exports = {
         9: 'calc(2.25 * var(--rem, 16px))'
       },
       backgroundImage: {
-        'stop-war': 'url(\'./img/stop.jpeg\')'
+        'stop-war': 'url(\'./img/stop.jpeg\')',
+        'stop-war-mob': 'url(\'./img/stop_mob.jpeg\')'
       }
     }
   },
