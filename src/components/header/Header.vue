@@ -93,9 +93,6 @@ export default {
       ];
     }
   },
-  mounted () {
-    this.showHamburgerMenu();
-  },
   methods: {
     showHamburgerMenu () {
       this.$refs.hamburgerMenu.show();

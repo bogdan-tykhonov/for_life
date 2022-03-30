@@ -105,8 +105,7 @@ const htmlOverflow = getComputedStyle(document.documentElement).overflow;
 export default {
   name: 'HamburgerMenu',
   components: {
-    CloseIcon,
-    LocaleSelect
+    CloseIcon
   },
   extends: LocaleSelect,
   props: {
@@ -139,7 +138,6 @@ export default {
       if (htmlOverflow !== 'visible') {
         document.documentElement.style.overflow = htmlOverflow;
       }
-      document.body.classList.remove('overflow-hidden');
       
       document.body.classList.remove('overflow-hidden');
       this.showMenuOverlay = false;

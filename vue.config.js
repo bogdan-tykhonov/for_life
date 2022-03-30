@@ -11,7 +11,8 @@ module.exports = {
       .use('i18n')
       .loader('@intlify/vue-i18n-loader');
     config.resolve.alias
-      .set('@mixins', path.resolve(__dirname, 'src/mixins'));
+      .set('@mixins', path.resolve(__dirname, 'src/mixins'))
+      .set('@images', path.resolve(__dirname, 'src/img'));
   },
 
   pluginOptions: {
