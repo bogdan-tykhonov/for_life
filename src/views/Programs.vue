@@ -3,7 +3,7 @@
     <Subtitle :title="$t('military_help')" />
 
     <p
-      class="my-4 sm:my-8 text-xl"
+      class="my-4 sm:my-8 sm:text-xl"
       v-text="$t('military_help_text')"
     />
 
@@ -18,7 +18,7 @@
     />
 
     <p
-      class="my-4 sm:my-8 text-xl"
+      class="my-4 sm:my-8 sm:text-xl"
       v-text="$t('humanitarian_help_text')"
     />
 

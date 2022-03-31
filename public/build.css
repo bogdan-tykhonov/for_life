@@ -576,14 +576,19 @@ input::-webkit-outer-spin-button,
   margin-bottom: calc(1 * var(--rem, 16px));
 }
 
-.my-8 {
-  margin-top: calc(2 * var(--rem, 16px));
-  margin-bottom: calc(2 * var(--rem, 16px));
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-5 {
+  margin-top: calc(1.25 * var(--rem, 16px));
+  margin-bottom: calc(1.25 * var(--rem, 16px));
+}
+
+.my-10 {
+  margin-top: calc(2.5 * var(--rem, 16px));
+  margin-bottom: calc(2.5 * var(--rem, 16px));
 }
 
 .mt-8 {
@@ -716,6 +721,14 @@ input::-webkit-outer-spin-button,
 
 .max-w-\[1270px\] {
   max-width: 1270px;
+}
+
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[700px\] {
+  max-width: 700px;
 }
 
 .flex-1 {
@@ -960,6 +973,10 @@ input::-webkit-outer-spin-button,
   padding-bottom: calc(3 * var(--rem, 16px));
 }
 
+.pt-4 {
+  padding-top: calc(1 * var(--rem, 16px));
+}
+
 .pt-25 {
   padding-top: calc(6.25 * var(--rem, 16px));
 }
@@ -968,12 +985,12 @@ input::-webkit-outer-spin-button,
   padding-left: calc(1.75 * var(--rem, 16px));
 }
 
-.pt-4 {
-  padding-top: calc(1 * var(--rem, 16px));
-}
-
 .pl-3 {
   padding-left: calc(0.75 * var(--rem, 16px));
+}
+
+.pt-10 {
+  padding-top: calc(2.5 * var(--rem, 16px));
 }
 
 .text-left {
@@ -1016,6 +1033,11 @@ input::-webkit-outer-spin-button,
 .text-4xl {
   font-size: calc(2 * var(--rem, 16px));
   line-height: calc(2.25 * var(--rem, 16px));
+}
+
+.text-base {
+  font-size: calc(1 * var(--rem, 16px));
+  line-height: calc(1.5 * var(--rem, 16px));
 }
 
 .font-medium {
@@ -1332,6 +1354,16 @@ input::-webkit-outer-spin-button,
     margin-bottom: calc(2 * var(--rem, 16px));
   }
 
+  .sm\:my-10 {
+    margin-top: calc(2.5 * var(--rem, 16px));
+    margin-bottom: calc(2.5 * var(--rem, 16px));
+  }
+
+  .sm\:my-5 {
+    margin-top: calc(1.25 * var(--rem, 16px));
+    margin-bottom: calc(1.25 * var(--rem, 16px));
+  }
+
   .sm\:mb-4 {
     margin-bottom: calc(1 * var(--rem, 16px));
   }
@@ -1423,6 +1455,10 @@ input::-webkit-outer-spin-button,
 
   .sm\:pt-8 {
     padding-top: calc(2 * var(--rem, 16px));
+  }
+
+  .sm\:pt-10 {
+    padding-top: calc(2.5 * var(--rem, 16px));
   }
 
   .sm\:text-xl {
