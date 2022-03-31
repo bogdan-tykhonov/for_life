@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="bg-stop-war-mob h-[250px] sm:h-[540px] bg-center lg:rounded-b-lg -mx-5 md:-mx-10 lg:mx-0 lg:bg-stop-war px-3 sm:px-10 py-3 sm:py-6 text-white bg-cover  flex flex-col justify-end">
+      <div class="bg-stop-war-mob text-primary lg:text-white h-[250px] sm:h-[540px] bg-center lg:rounded-b-lg -mx-5 md:-mx-10 lg:mx-0 lg:bg-stop-war px-3 sm:px-10 py-3 sm:py-6 text-white bg-cover  flex flex-col justify-end">
         <p
           class="text-xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-3"
           v-text="$t('volunteer_team')"
@@ -14,10 +14,10 @@
       </div>
     </section>
  
-    <HelpSection class="mt-4 sm:mt-8" />
+    <HelpSection class="mt-8" />
 
     <Subtitle
-      class="my-4 sm:my-8"
+      class="my-8"
       :title="$t('programs')"
     />
 
@@ -57,10 +57,10 @@
       </router-link>
     </div>
 
-    <Documents class="my-4 sm:my-8" />
+    <Documents class="my-8" />
 
     <Subtitle
-      class="my-4 sm:my-8"
+      class="my-8"
       :title="$t('reports')"
     />
 

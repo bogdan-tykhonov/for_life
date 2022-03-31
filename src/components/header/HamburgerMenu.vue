@@ -34,7 +34,7 @@
     >
       <nav
         v-if="showMenuContent"
-        class="bg-white overflow-hidden shadow-xl transition-all h-screen fixed right-0 top-0 flex flex-col pt-25 w-[300px]"
+        class="bg-white overflow-hidden shadow-xl transition-all h-screen fixed right-0 top-0 flex flex-col pt-25 w-[250px] sm:w-[300px]"
       >
         <div
           class="flex-center w-11 h-11 rounded-full bg-extra-gray-4 absolute top-4 right-4 hover:bg-gray-dark transition-colors duration-200 cursor-pointer"
@@ -47,7 +47,7 @@
           <li
             v-for="(link, index) in routes"
             :key="`navLink${index}`"
-            class="pl-7 text-xl font-bold border-t last:border-b hover:text-primary-hover group border-gray-border py-6 cursor-pointer transition-colors duration-200"
+            class="pl-7 sm:text-xl font-bold border-t last:border-b hover:text-primary-hover group border-gray-border py-4 sm:py-6 cursor-pointer transition-colors duration-200"
             :class="{'text-primary hover:!text-primary ': link.active}"
           >
             <router-link
@@ -63,11 +63,11 @@
 
         <div
           v-click-outside="() => showSelect = false"
-          class="relative w-full h-19"
+          class="relative w-full h-15 sm:h-19"
           @click.prevent
         >
           <button
-            class="w-full pl-7 py-6 h-full text-left text-xl font-bold  border-b border-gray-border text-primary hover:text-primary-hover transition-colors duration-200"
+            class="w-full pl-7 py-4 sm:py-6 h-full text-left sm:text-xl font-bold  border-b border-gray-border text-primary hover:text-primary-hover transition-colors duration-200"
             :class="{'hover:!border-primary hover:!text-primary': showSelect}"
             @click="() => showSelect = !showSelect"
           >
@@ -79,7 +79,7 @@
           <transition name="fade">
             <div
               v-show="showSelect"
-              class="absolute top-[calc(100%-10px)] z-10 bg-white w-full overflow-hidden border border-t-0 text-primary text-xl font-bold border-primary"
+              class="absolute top-[calc(100%-10px)] z-10 bg-white w-full overflow-hidden border border-t-0 text-primary sm:text-xl font-bold border-primary"
             >
               <p
                 v-for="(locale, index) in normilizedLocale"

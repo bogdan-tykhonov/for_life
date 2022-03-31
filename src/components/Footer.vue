@@ -1,12 +1,12 @@
 <template>
-  <footer class="bg-primary text-white text-lg sm:text-xl font-medium pt-8 pb-12 mt-8">
+  <footer class="bg-primary text-white sm:text-xl font-medium pt-8 pb-12 mt-8">
     <Container>
       <nav class="flex justify-between sm:justify-start sm:gap-27">
         <ul class="flex flex-col gap-2 sm:gap-4">
           <li
             v-for="(link, index) in routes"
             :key="`navLink${index}`"
-            class="text-lg sm:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
+            class="sm:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
           >
             <router-link
               :to="{
@@ -47,7 +47,7 @@
 
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between mt-8">
         <a
-          class="text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
+          class="sm:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
           href="mailto:sakeoflifeua@gmail.com"
           v-text="'sakeoflifeua@gmail.com'"
         />

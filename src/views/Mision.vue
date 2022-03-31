@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-4 sm:pt-10  pb-10 sm:pb-20">
+  <section class="pt-4 sm:pt-10">
     <Subtitle :title="$t('mision')" />
 
     <p

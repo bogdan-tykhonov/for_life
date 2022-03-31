@@ -11,25 +11,25 @@
 
       <div class="flex flex-col gap-5">
         <Input
-          v-model="$v.formData.name.$model"
+          v-model="v$.formData.name.$model"
           :placeholder="$t('name')"
         />
 
         <Input
-          v-model="$v.formData.email.$model"
+          v-model="v$.formData.email.$model"
           :placeholder="$t('email')"
         />
 
         <Input
-          v-model="$v.formData.phone.$model"
+          v-model="v$.formData.phone.$model"
           v-maska="'+38 (###) ### ## ##'"
           :placeholder="$t('phone')"
         />
 
         <textarea
-          v-model="$v.formData.message.$model"
+          v-model="v$.formData.message.$model"
           :placeholder="$t('message')"
-          class="placeholder:text-center pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-xl"
+          class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-xl"
         />
 
         <BtnPrimary
@@ -49,12 +49,12 @@
 </template>
 
 <script>
-import BtnPrimary from '../ui/BtnPrimary';
 import Input from '../ui/Input';
-import { required, email, minLength } from '@vuelidate/validators';
 import useVuelidate from '@vuelidate/core';
+import { required, email, minLength } from '@vuelidate/validators';
 import modalMixin from '@mixins/modal-mixin';
 
+import BtnPrimary from '../ui/BtnPrimary';
 import ModalLayout from './ModalLayout';
 
 
@@ -62,12 +62,12 @@ export default {
   name: 'GetHelpModal',
   components: {
     ModalLayout,
-    Input,
-    BtnPrimary
+    BtnPrimary,
+    Input
   },
   mixins: [modalMixin],
   setup () {
-    return { $v: useVuelidate() };
+    return { v$: useVuelidate() };
   },
   data () {
     return {
@@ -94,7 +94,7 @@ export default {
       },
       message: required
     }
-  }
+  }  
 };
 </script>
 

@@ -5,14 +5,14 @@
     <!-- Mob -->
     <div class="flex mt-4 gap-3 flex-col sm:hidden">
       <BtnPrimary
-        class="lg:text-4xl !h-17"
-        :title="$t('want_help')"
-      />
-
-      <BtnPrimary
         class="lg:text-4xl !h-17 border border-primary bg-white text-primary hover:bg-white hover:border-primary-hover hover:text-primary-hover"
         :title="$t('get_help')"
         @click="showGetHelpModal"
+      />
+      
+      <BtnPrimary
+        class="lg:text-4xl !h-17"
+        :title="$t('want_help')"
       />
     </div>
     <!-- Mob -->

@@ -33,5 +33,10 @@ export const router = createRouter({
       path: '/:pathMatch(.*)*',
       redirect: '/home'
     }
-  ]
+  ],
+  scrollBehavior () {
+    return { 
+      top: 0
+    };
+  }
 });
