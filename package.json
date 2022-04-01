@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "concurrently \"vue-cli-service serve\" \"npm run tailwind\"",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
@@ -15,7 +15,9 @@
     "@vue/cli": "^5.0.0-beta.3",
     "@vuelidate/core": "^2.0.0-alpha.39",
     "@vuelidate/validators": "^2.0.0-alpha.28",
+    "axios": "^0.26.1",
     "click-outside-vue3": "^4.0.1",
+    "concurrently": "^7.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "core-js": "^3.6.5",
     "maska": "^1.5.0",

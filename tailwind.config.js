@@ -97,6 +97,10 @@ module.exports = {
           DEFAULT: 'var(--theme-color-gray-transparent, #E5E5E5)',
           transparent: 'var(--theme-color-gray-transparent, rgba(105, 105, 105, 0.68))',
           border: 'var(--theme-color-gray-border, #C4C4C4)'
+        },
+        red: {
+          light: 'var(--theme-color-red-light, #f8d7da)',
+          black: 'var(--theme-color-red-black, #721c24)'
         }
       },
       fontSize: {

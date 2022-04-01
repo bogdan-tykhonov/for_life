@@ -80,6 +80,12 @@
         v-text="$t('reports_text')"
       />
     </BlockLayout>
+
+    <SuccessModal
+      ref="successModal"
+      :title="$t('modal_title')"
+      :subtitle="$t('modal_subtitle')"
+    />
   </div>
 </template>
 

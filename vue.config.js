@@ -2,6 +2,9 @@ const path = require('path');
 
 module.exports = {
   lintOnSave: 'warning',
+  devServer: {
+    proxy: 'http://localhost:8888/for_life/'
+  },
 
   chainWebpack: config => {
     config.module
@@ -12,7 +15,10 @@ module.exports = {
       .loader('@intlify/vue-i18n-loader');
     config.resolve.alias
       .set('@mixins', path.resolve(__dirname, 'src/mixins'))
-      .set('@images', path.resolve(__dirname, 'src/img'));
+      .set('@images', path.resolve(__dirname, 'src/img'))
+      .set('@api', path.resolve(__dirname, 'src/api'));
+    config.devServer
+
   },
 
   pluginOptions: {

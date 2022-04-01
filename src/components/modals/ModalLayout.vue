@@ -90,15 +90,33 @@ export default {
       showModal: false,
       showModalOverlay: false,
       showModalContent: false,
-      mobilePaddingNum: 35
+      mobilePaddingNum: 35,
+      containerWidth: window.innerWidth,
+      closeTimeOut: null
     };
   },
   computed: {
     modalStyles () {
+      const computedMaxWidth = this.containerWidth < 640
+        ? this.containerWidth - this.mobilePaddingNum * 2 
+        : this.maxWidth;
+
       return {
-        maxWidth: `${ this.maxWidth }px`
+        maxWidth: `${ computedMaxWidth }px`
       };
     }
+  },
+  watch: {
+    showModalContent (val) {
+      if (val && this.closeDelay) {
+        this.closeTimeOut = setTimeout(() => {
+          this.close();
+        }, this.closeDelay);
+      }
+    }
+  },
+  unmounted () {
+    clearTimeout(this.closeTimeOut);
   },
   methods: {
     show () {

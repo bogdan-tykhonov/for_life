@@ -12,7 +12,8 @@ export default createI18n({
       'about': 'Про нас',
       'mision': 'Наша місія',
       'contacts': 'Контакти',
-      'military_help': 'Допомога військовим'
+      'military_help': 'Допомога військовим',
+      'error_try_again': 'Сталася помилка, спробуйте ще раз'
     },
     en: {
       'want_help': 'Want to help',
@@ -22,7 +23,8 @@ export default createI18n({
       'about': 'About',
       'mision': 'Our mision',
       'contacts': 'Contacts',
-      'military_help': 'Military help'
+      'military_help': 'Military help',
+      'error_try_again': 'An error occurred, try again'
     }
   }
 });

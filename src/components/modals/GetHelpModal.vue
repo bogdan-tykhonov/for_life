@@ -3,38 +3,42 @@
     ref="modalLayout"
     :max-width="530"
   >
-    <div class="max-w-[380px] mx-auto py-15 text-center">
+    <div class="px-10 sm:px-18 py-15 text-center">
       <h2
-        class="font-bold text-4xl mb-8 text-primary"
+        class="font-bold text-xl sm:text-4xl mb-4 sm:mb-8 text-primary"
         v-text="$t('title')"
       />
 
       <div class="flex flex-col gap-5">
         <Input
           v-model="v$.formData.name.$model"
+          class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('name')"
         />
 
         <Input
           v-model="v$.formData.email.$model"
+          class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('email')"
         />
 
         <Input
           v-model="v$.formData.phone.$model"
           v-maska="'+38 (###) ### ## ##'"
+          class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('phone')"
         />
 
         <textarea
-          v-model="v$.formData.message.$model"
+          v-model="formData.message"
           :placeholder="$t('message')"
-          class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-xl"
+          class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-base sm:text-lg"
         />
 
         <BtnPrimary
           :title="$t('send')"
           class="h-15"
+          :disabled="v$.formData.$invalid"
           @click="sendForm"
         />
         
@@ -52,6 +56,7 @@
 import Input from '../ui/Input';
 import useVuelidate from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
+import { sendMail } from '@api';
 import modalMixin from '@mixins/modal-mixin';
 
 import BtnPrimary from '../ui/BtnPrimary';
@@ -81,18 +86,29 @@ export default {
   },
   methods: {
     async sendForm () {
-      console.log('send');
+      this.showError = false;
+      try {
+        this.isLoading = true;
+        await sendMail(this.formData);
+        this.showModal();
+      } catch (e) {
+        this.showError = true;
+      } finally {
+        this.isLoading = false;
+      }
     }
   },
   validations: {
     formData: {
-      name: required,
-      email: email,
+      name: {required},
+      email: {
+        email,
+        required
+      },
       phone: {
         required,
         minLength: minLength(19)
-      },
-      message: required
+      }
     }
   }  
 };
@@ -102,18 +118,18 @@ export default {
   {
     "ua": {
       "title": "Отримати допомогу",
-      "name": "Ваше ім'я",
-      "phone": "Ваш телефон",
-      "email": "Ваш e-mail",
+      "name": "Ваше ім'я*",
+      "phone": "Ваш телефон*",
+      "email": "Ваш e-mail*",
       "message": "Опишіть Вашу проблему" ,
       "send": "Відправити",
       "cancel": "Скасувати"
     },
     "en": {
       "title": "Get help",
-      "name": "Your name",
-      "phone": "Your phone",
-      "email": "Your e-mail",
+      "name": "Your name*",
+      "phone": "Your phone*",
+      "email": "Your e-mail*",
       "message": "Describe your problem" ,
       "send": "Send",
       "cancel": "Cancel"
