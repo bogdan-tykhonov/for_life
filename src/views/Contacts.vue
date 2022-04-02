@@ -56,7 +56,7 @@
 <script>
 import ErrorAlert from '../components/ui/ErrorAlert';
 import SuccessModal from '../components/modals/SuccessModal';
-import { sendMail } from '@api';
+import ApiCall from '@api';
 import BtnPrimary from '../components/ui/BtnPrimary';
 import Subtitle from '../components/ui/Subtitle';
 import { required, email, minLength } from '@vuelidate/validators';
@@ -97,7 +97,7 @@ export default {
       this.showError = false;
       try {
         this.isLoading = true;
-        await sendMail(this.formData);
+        await ApiCall.sendMail(this.formData);
         this.showModal();
       } catch (e) {
         this.showError = true;

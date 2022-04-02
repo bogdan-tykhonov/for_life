@@ -56,7 +56,7 @@
 import Input from '../ui/Input';
 import useVuelidate from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
-import { sendMail } from '@api';
+import ApiCall from '@api';
 import modalMixin from '@mixins/modal-mixin';
 
 import BtnPrimary from '../ui/BtnPrimary';
@@ -89,7 +89,7 @@ export default {
       this.showError = false;
       try {
         this.isLoading = true;
-        await sendMail(this.formData);
+        await ApiCall.sendMail(this.formData);
         this.showModal();
       } catch (e) {
         this.showError = true;
