@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   lintOnSave: 'warning',
-  publicPath: '/for_life/',
   devServer: {
     proxy: 'http://localhost:8888/for_life/'
   },
