@@ -1,59 +1,21 @@
 <template>
-  <div
-    v-if="showModal"
-    class="fixed z-max inset-0 overflow-scroll"
-    aria-labelledby="modal-title"
-    role="dialog"
-    aria-modal="true"
-  >
-    <div
-      class="overflow-y-auto text-center block p-0 h-max"
-    >
-      <Transition
-        :duration="{enter: 200, leave: 200}"
-        enter-from-class="opacity-0"
-        enter-active-class="ease-out duration-300"
-        enter-to-class="opacity-100"
-        leave-from-class="opacity-100"
-        leave-active-class="ease-in duration-200"
-        leave-to-class="opacity-0"
-        @before-enter="showModalContent = true;"
-        @before-leave="showModalContent = false;"
-        @after-leave="showModal = false;"
+  <Teleport to="body">
+    <Transition name="modal">
+      <div
+        v-if="showModal"
+        class="fixed z-max inset-0 bg-gray-transparent flex-center transition-all duration-300 "
       >
         <div
-          v-if="showModalOverlay"
-          class="fixed inset-0 bg-gray-transparent"
-          aria-hidden="true"
-        />
-      </Transition>
-
-      <!-- This element is to trick the browser into centering the modal contents. -->
-      <span
-        class="inline-block align-middle h-screen"
-        aria-hidden="true"
-      >&#8203;</span>
-
-      <Transition
-        :duration="{enter: 200, leave: 200}"
-        enter-from-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        enter-active-class="ease-out duration-300"
-        enter-to-class="opacity-100 translate-y-0 sm:scale-100"
-        leave-from-class="opacity-100 translate-y-0 sm:scale-100"
-        leave-active-class="ease-in duration-200 opacity-0"
-        leave-to-class="translate-y-4 sm:translate-y-0 sm:scale-95"
-      >
-        <div
-          v-if="showModalContent"
+          id="modal-container"
           :class="wrapStyles"
           :style="modalStyles"
-          class="inline-block bg-white rounded-lg text-left shadow-xl transform transition-all align-middle w-full"
+          class="inline-block bg-white rounded-lg text-left transition-all duration-300 shadow-xl transform align-middle w-full"
         >
           <slot />
         </div>
-      </Transition>
-    </div>
-  </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <script>
@@ -107,7 +69,7 @@ export default {
     }
   },
   watch: {
-    showModalContent (val) {
+    showModal (val) {
       if (val && this.closeDelay) {
         this.closeTimeOut = setTimeout(() => {
           this.close();
@@ -126,9 +88,6 @@ export default {
       document.body.classList.add('overflow-hidden');
 
       this.showModal = true;
-      this.$nextTick(() => {
-        this.showModalOverlay = true;
-      });
     },
     
     close () {
@@ -140,7 +99,7 @@ export default {
       
       document.body.classList.remove('overflow-hidden');
 
-      this.showModalOverlay = false;
+      this.showModal = false;
     }
   }
 };

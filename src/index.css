@@ -43,10 +43,36 @@
 @layer utilities {
   .modal-open {
     @apply overflow-hidden;
-  } 
+  }
 }
 
 /* transition animations */
+
+/* .hamburger-enter-from {
+  @apply -translate-x-full
+}
+
+.hamburger-enter-from {
+  @apply -translate-x-full
+} */
+
+.modal-enter-from {
+  @apply opacity-0;
+}
+
+.modal-leave-to {
+  @apply opacity-0;
+}
+
+.modal-enter-from #modal-container,
+.modal-leave-to #modal-container {
+  @apply scale-110;
+}
+
+.modal-enter-from #hamburger-container,
+.modal-leave-to #hamburger-container {
+  @apply translate-x-full;
+}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -62,6 +88,7 @@
 .list-offset-leave-to {
   @apply opacity-0 -translate-x-full;
 }
+
 .list-offset-leave-active {
   @apply absolute;
 }
@@ -99,8 +126,9 @@
 
 /* Vue slider */
 
-.carousel__prev, .carousel__next {
-  background-color: var(--theme-color-primary)!important;
+.carousel__prev,
+.carousel__next {
+  background-color: var(--theme-color-primary) !important;
 }
 
 .carousel__pagination-button {
@@ -109,7 +137,7 @@
 }
 
 .carousel__pagination-button--active {
-  background-color: var(--theme-color-primary-hover)!important;
+  background-color: var(--theme-color-primary-hover) !important;
   opacity: 1;
 }
 
@@ -121,5 +149,5 @@
 
 :root {
   --theme-color-primary: #3c7bff;
-  --theme-color-primary-hover: #3B29FF;
+  --theme-color-primary-hover: #3b29ff;
 }

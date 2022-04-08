@@ -1,10 +1,13 @@
 <template>
   <ModalLayout
     ref="modalLayout"
+    role="dialog"
+    aria-labelledby="dialog1Title"
     :max-width="530"
   >
     <div class="px-10 sm:px-18 py-15 text-center">
       <h2
+        id="dialog1Title"
         class="font-bold text-xl sm:text-4xl mb-4 sm:mb-8 text-primary"
         v-text="$t('title')"
       />
@@ -122,7 +125,7 @@ export default {
       "phone": "Ваш телефон*",
       "email": "Ваш e-mail*",
       "message": "Опишіть Вашу проблему" ,
-      "send": "Відправити",
+      "send": "Надіслати",
       "cancel": "Скасувати"
     },
     "en": {

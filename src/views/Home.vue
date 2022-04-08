@@ -120,13 +120,13 @@ export default {
 {
   "ua": {
     "volunteer_team": "Волонтерьска спільнота",
-    "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.",
+    "main_text": "Кожен з нас- це маленька краплинка дощу ,але разом ми будемо бурею для ворога. Одна краплина в морі -це лише краплинка, але разом ми океан. Тому Україна – це всі ми . І не важливо у якій частині нашої країни болить тому що  болить у кожного з нас у кожному кутку нашої родини.",
     "reports": "Звіти",
     "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду"
   },
   "en": {
     "volunteer_team": "Volunteer community",
-    "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.", 
+    "main_text": "Each of us is a small raindrop, but together we will be a storm for the enemy. One drop in the sea is just a drop, but together we are the ocean. That is why Ukraine is all of us. And it doesn't matter in which part of our country it hurts because it hurts each of us in every corner of our family.", 
     "reports": "Reports",
      "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
   }

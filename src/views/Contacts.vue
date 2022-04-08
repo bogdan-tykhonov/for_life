@@ -97,7 +97,7 @@ export default {
       this.showError = false;
       try {
         this.isLoading = true;
-        await ApiCall.sendMail(this.formData);
+        //await ApiCall.sendMail(this.formData);
         this.showModal();
       } catch (e) {
         this.showError = true;
@@ -130,7 +130,7 @@ export default {
       "phone": "Ваш телефон*",
       "email": "Ваш e-mail*",
       "message": "Повідомлення",
-      "send": "Відправити",
+      "send": "Надіслати",
       "modal_title": "Ваша заявка успішно відправлена!",
       "modal_subtitle": "Найближчим часом з вами зв'яжеться наша команда"
     },
