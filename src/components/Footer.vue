@@ -101,11 +101,11 @@ export default {
   {
     "ua": {
       "our_links": "Ми у соцмережах:",
-      "fond_name": "Благодійний фонд “Заради Життя”"
+      "fond_name": "Благодійний фонд “УКРАЇНА - ЦЕ ВСІ МИ”"
     },
     "en": {
       "our_links": "We in social medias:",
-       "fond_name": "Charitable Foundation “For Life”"
+       "fond_name": "Charitable Foundation “All of us are Ukraine"
     }
   }
 </i18n>

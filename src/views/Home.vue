@@ -4,12 +4,22 @@
       <div class="bg-stop-war-mob text-primary lg:text-white h-[250px] sm:h-[540px] bg-center lg:rounded-b-lg -mx-5 md:-mx-10 lg:mx-0 lg:bg-stop-war px-3 sm:px-10 py-3 sm:py-6 text-white bg-cover  flex flex-col justify-end">
         <p
           class="text-xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-3"
-          v-text="$t('volunteer_team')"
+          v-text="$t('ukraine_is_us')"
         />
 
         <p
           class="text-sm sm:text-base md:text-lg font-bold"
           v-text="$t('main_text')"
+        />
+
+        <p
+          class="text-sm sm:text-base sm:my-2 md:text-lg font-bold"
+          v-text="$t('main_text2')"
+        />
+
+        <p
+          class="text-sm sm:text-base md:text-lg font-bold"
+          v-text="$t('main_text3')"
         />
       </div>
     </section>
@@ -119,16 +129,20 @@ export default {
 <i18n>
 {
   "ua": {
-    "volunteer_team": "Волонтерьска спільнота",
-    "main_text": "Кожен з нас- це маленька краплинка дощу ,але разом ми будемо бурею для ворога. Одна краплина в морі -це лише краплинка, але разом ми океан. Тому Україна – це всі ми . І не важливо у якій частині нашої країни болить тому що  болить у кожного з нас у кожному кутку нашої родини.",
+    "ukraine_is_us": "УКРАЇНА – ЦЕ ВСІ МИ!",
+    "main_text": "24го лютого о пятій годині ранку життя кожного українця змінилось назавжди.  Наші серця болять за кожен куточок нашої Батьківщини.",
+    "main_text2": "Окремо кожен з нас- це маленька краплина дощу, але всі разом ми станемо зливою, що змиє ворога з нашої землі.",
+    "main_text3": "Украіна – це кожен із нас",
     "reports": "Звіти",
     "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду"
   },
   "en": {
-    "volunteer_team": "Volunteer community",
-    "main_text": "Each of us is a small raindrop, but together we will be a storm for the enemy. One drop in the sea is just a drop, but together we are the ocean. That is why Ukraine is all of us. And it doesn't matter in which part of our country it hurts because it hurts each of us in every corner of our family.", 
+    "ukraine_is_us": "All of us are Ukraine!",
+    "main_text": "On February 24, at five o'clock in the morning lifes of every Ukrainians changed forever. Our hearts ache for every parts of our Motherland.", 
+    "main_text2": "Each of us is a small drop of the rain but together we are the downpour that will wash away the enemy from our land",
+    "main_text3": "Ukraine - is each of us",
     "reports": "Reports",
-     "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
+    "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
   }
 }
 </i18n>

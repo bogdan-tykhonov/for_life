@@ -1,12 +1,53 @@
 <template>
-  <section class="pt-4 sm:pt-8">
-    <Subtitle :title="$t('write_us')" />
+  <section class="pt-4 sm:pt-8 ">
+    <section class="grid lg:grid-cols-2 gap-6 lg:gap-13">
+      <div
+        v-for="(currency, key) in paymentConfig"
+        :key="`currency${key}`"
+        class="w-full mb-6 lg:mb-13"
+        :class="{'break-all': key === 'UAH'}"
+      >
+        <h2
+          class="font-bold text-primary text-lg md:text-2xl mb-2 md:mb-8"
+          v-text="key"
+        />
+
+        <div
+          v-for="(field, fieldIndex) in currency"
+          :key="`currency${fieldIndex}`"
+          class="w-full border border-b-0 last:border-b first:rounded-b-md last:rounded-b-md border-gray-border flex"
+          :class="{'rounded-t-md': fieldIndex === 0}"
+        >
+          <h2
+            class="w-1/3 border-r p-3 border-gray-border font-bold text-sm md:text-lg"
+            v-text="field.name"
+          />
+
+          <p
+            v-if="field.html"
+            class="flex-1 p-3 text-sm md:text-lg break-all"
+            v-html="field.value"
+          />
+
+          <p
+            v-else
+            class="flex-1 p-3 text-sm md:text-lg break-all"
+            v-text="field.value"
+          />
+        </div>
+      </div>
+    </section>
+
+    <Subtitle
+      class="md:!text-2xl"
+      :title="$t('write_us')"
+    />
 
     <form
-      class="mt-4 sm:mt-8 max-w-[380px]"
+      class="w-full mt-4 md:mt-8"
       @submit.prevent
     >
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-6">
         <Input
           v-model="v$.formData.name.$model"
           class="!text-lg sm:!text-xl"
@@ -25,24 +66,26 @@
           class="!text-lg sm:!text-xl"
           :placeholder="$t('phone')"
         />
-
-        <textarea
-          v-model="formData.message"
-          :placeholder="$t('message')"
-          class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg !text-lg sm:!text-xl"
-        />
-
-        <BtnPrimary
-          :title="$t('send')"
-          :disabled="v$.formData.$invalid"
-          @click="sendForm"
-        />
-
-        <ErrorAlert
-          v-if="showError"
-          :error="$t('error_try_again')"
-        />
       </div>
+
+      <textarea
+        v-model="formData.message"
+        :placeholder="$t('message')"
+        class="pt-4 mb-6 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg !text-lg sm:!text-xl"
+      />
+
+      <ErrorAlert
+        v-if="showError"
+        class="my-4"
+        :error="$t('error_try_again')"
+      />
+
+      <BtnPrimary
+        :title="$t('send')"
+        class="sm:max-w-[380px]"
+        :disabled="v$.formData.$invalid"
+        @click="sendForm"
+      />
     </form>
 
     <SuccessModal
@@ -85,6 +128,128 @@ export default {
         email: '',
         phone: '',
         message: ''
+      },
+      paymentConfig: {
+        'EUR': [
+          {
+            name: 'Legal entity',
+            value: 'CO "CF "UKRAINE IS ALL OF US"'
+          },
+          {
+            name: 'Enterprise code',
+            value: '44863516'
+          },
+          {
+            name: 'Currency of account ',
+            value: 'EUR'
+          },
+          {
+            name: 'Account number',
+            value: 'UA683510050000026001879139984'
+          },
+          {
+            name: 'Bank name',
+            html: true,
+            value: `07205696 <br>
+              JOINT STOCK COMPANY "UKRSIBBANK"<br>
+              Beneficiary bank (JSC "UKRSIBBANK")<br>
+              07205696<br>
+              UKRSIBBANK<br>
+              ANDRIIVSKA STREET 2/12<br>
+              KYIV, UKRAINE<br>
+              SWIFT code: KHABUA2K<br>
+              `
+          },
+          {
+            name: 'Intermediary bank',
+            html: true,
+            value: `
+              BNP PARIBAS SA<br>
+              Paris, FRANCE<br>
+              SWIFT-код: BNPAFRPP<br>
+              `
+          },
+          {
+            name: 'Purpose of payment',
+            value: 'Charitable donation to'
+          }
+        ],
+        'USD': [
+          {
+            name: 'Legal entity',
+            value: 'CO "CF "UKRAINE IS ALL OF US"'
+          },
+          {
+            name: 'Enterprise code',
+            value: '44863516'
+          },
+          {
+            name: 'Currency of account ',
+            value: 'USD'
+          },
+          {
+            name: 'Account number',
+            value: 'UA503510050000026002879139983'
+          },
+          {
+            name: 'Bank name',
+            html: true,
+            value: `020061151200138 <br>
+              JOINT STOCK COMPANY "UKRSIBBANK"<br>
+              Beneficiary bank (JSC "UKRSIBBANK")<br>
+              07205696<br>
+              UKRSIBBANK<br>
+              ANDRIIVSKA STREET 2/12<br>
+              KYIV, UKRAINE<br>
+              SWIFT code: KHABUA2K<br>
+              `
+          },
+          {
+            name: 'Intermediary bank',
+            html: true,
+            value: `
+             BNP PARIBAS U.S.A. - New York Branch<br>
+              New York, USA<br>
+              SWIFT-код: BNPAUS3N<br>
+            `
+          },
+          {
+            name: 'Purpose of payment',
+            value: 'Charitable donation to'
+          }
+        ],
+        'UAH': [
+          {
+            name: 'Найменування юр. особи',
+            value: 'БО "БФ "УКРАЇНА - ЦЕ ВСІ МИ"'
+          },
+          {
+            name: 'Код за ЄДРПОУ юр. особи',
+            value: '44863516'
+          },
+          {
+            name: 'Валюта рахунку',
+            value: 'UAH'
+          },
+          {
+            name: '№ рахунку',
+            value: 'UA323510050000026003879139982'
+          },
+          {
+            name: 'Назва банку',
+            value: 'АТ « УКРСИББАНК»'
+          },
+          {
+            name: 'Призначення платежу',
+            value: 'Благодійна пожертва на'
+          }
+        ],
+        'USDT': [
+          {
+            name: 'Wallet',
+            value: 'THEnox7JG1KRqHJkS8hZvFdc4Hdonc3Ndh'
+          }
+        ]
       }
     };
   },
@@ -97,7 +262,7 @@ export default {
       this.showError = false;
       try {
         this.isLoading = true;
-        //await ApiCall.sendMail(this.formData);
+        await ApiCall.sendMail(this.formData);
         this.showModal();
       } catch (e) {
         this.showError = true;

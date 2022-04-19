@@ -27,7 +27,7 @@
           <Slide
             v-for="(document, index) in documents"
             :key="`document${index}`"
-            class="p-3 cursor-pointer"
+            class="p-3 cursor-pointer hover:scale-90 transition-transform duration-300"
             @click="openImage(index)"
           >
             <img :src="document.documentImage.url">
@@ -47,8 +47,9 @@
           <img
             v-for="(document, index) in documents"
             :key="`document${index}`"
-            class="cursor-pointer w-1/3 md:w-1/5 max-w-50"
+            class="cursor-pointer w-1/3 md:w-1/5 max-w-50 hover:scale-90 transition-transform duration-300"
             :src="document.documentImage.url"
+            @click="openImage(index)"
           >
         </div>
       </transition>
@@ -140,6 +141,7 @@ export default {
     },
 
     openImage (slideIndex) {
+      console.log(slideIndex);
       this.lightbox.loadAndOpen(slideIndex);
     }
   }

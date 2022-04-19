@@ -4,8 +4,12 @@
 
     <p
       class="sm:text-xl my-4"
-      v-text="$t('about_text_1')"
-    />
+    >
+      “<span
+        class="font-bold text-primary"
+        v-text="$t('ukraine_is_us')"
+      />{{ $t('about_text_1') }}
+    </p>
 
     <p
       class="sm:text-xl my-4"
@@ -13,10 +17,21 @@
     />
 
     <p
-      class="sm:text-xl my-4 sm:mb-8"
+      class="sm:text-xl my-4"
+      v-text="$t('about_text_3')"
+    />
+
+    <p
+      class="sm:text-xl my-4"
+      v-text="$t('about_text_4')"
+    />
+
+    <p
+      class="sm:text-xl my-4"
     >
-      {{ $t('about_text_3') }} <span
-        class="text-primary font-bold"
+      {{ $t('about_text_5') }}
+      <span
+        class="font-bold text-primary"
         v-text="$t('ukraine_is_us')"
       />
     </p>
@@ -48,16 +63,20 @@ export default {
 <i18n>
   {
     "ua": {
-      "about_text_1": "24 лютого 5 годин ранку, як тільки ворог почав бомбити нашу землю, саме тоді стало зрозуміло, як найшвидше потрібна допомога, бо без всіх нас немає України.",
-      "about_text_2": "Я, Дудніченко Ольга Володимирівна та Горячкін Андрій Андрійович заснували цей фонд для допомоги ЗСУ та людям, які потрапили під гусениці танка під назвою русскій мір.",
-      "about_text_3": "Наша команда нараховує дуже багато людей, які не байдужі до горя, яке ввійшло в хати багатьох наших українців. Це хлопці та дівчата, які допомогають зі збором коштів, розвозять їжу, допомогають за власні кошти вивозити людей з місць де з’явилося зло, це всі ми разом, бо ",
+      "about_text_1": "”- це волонтерська спільнота, що заснована Ольгою Дудніченко та Андрієм Горячкіним",
+      "about_text_2": "Зараз наша команда налічує більше 25 небайдужих хлопців і дівчат, які з перших днів війни самовідданно допомогають тим, хто цього потребує.",
+      "about_text_3": "Ми закуповуємо  екіпірування, обладнання, медичні засоби для військових. Збираємо гуманітарну допомогу для цивільного населення. За власні кошти займаємося евакуацією людей,  звичне життя яких було зруйновано “русским миром”.",
+      "about_text_4": "Усі кошти, що надходять на рахунок фонду ми витрачаємо на потреби українських військових та гуманітарну допомогу.",
+      "about_text_5": "Дякуємо, що долучаєтеся!",
       "ukraine_is_us": "УКРАЇНА - ЦЕ ВСІ МИ"
     },
     "en": {
-      "about_text_1": "On February 24, at 5 o'clock in the morning, as soon as the enemy began to bomb our land, it became clear that help was needed as soon as possible, because without all of us there is no Ukraine.",
-      "about_text_2": "I, Dudnichenko Olga Vladimirovna and Goryachkin Andrey Andreevich established this fund for the help of ZSU (Armed Forces of Ukraine) and the people who got under caterpillars of the tank under the name \"Russian measure.\"",
-      "about_text_3": "Our team has a lot of people who are not indifferent to the grief that has entered the homes of many of our Ukrainians. These are boys and girls who help with fundraising, deliver food, help to take people out of places where evil has appeared at their own expense, it's all of us together, because ",
-      "ukraine_is_us": "UKRAINE IS ALL OF US"
+      "about_text_1": "“All of us are Ukraine” is volonteer comunity which was founded by Olga Dudnichenko and Andriy Goryachkin",
+      "about_text_2": "As for now, our team unites 25 people. Starting from the first days of the war, they help for those who is in need.",
+      "about_text_3": "We purchase kit, equipment and medicines for the Armed Forces of Ukraine. We collect humanitarian aid for civilians. We are evacuating people whose normal lives ruined by russian federation at our own expense.",
+      "about_text_4": "All payments that we got we spend for needs of the Armed Forces and humanitarian aid. ",
+      "about_text_5": "Thanks you for joining!",
+      "ukraine_is_us": "All of us are Ukraine!"
     }
   }
 </i18n>
