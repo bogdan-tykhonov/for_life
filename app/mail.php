@@ -6,7 +6,7 @@
   $phone = $data['[home'];
   $message = $data['message'];
 
-  $to = 'sakeoflifeua@gmail.com'; 
+  $to = 'bogdan.v.t@ukr.net'; 
 
   $subject = 'Нова заявка на допомогу';
   
@@ -24,9 +24,9 @@
     </html>
   ';
 
-  $headers[] = 'To: Mary <sakeoflifeua@gmail.com';
+  $headers[] = 'To: Mary <bogdan.v.t@ukr.net';
 
-  $result = mail($to, $subject, $message, implode("\r\n", $headers));
+  $result = mail($to, $subject, $mail_message, implode("\r\n", $headers));
 
   if ($result) {
     echo 'success';

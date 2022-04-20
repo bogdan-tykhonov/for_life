@@ -2,7 +2,7 @@
   <button
     class="bg-primary hover:bg-primary-hover transition-colors duration-200 w-full h-13 text-white font-bold text-xl p-4 rounded-lg flex-center"
     :class="{'cursor-not-allowed bg-gray hover:!bg-gray': disabled}"
-    :disabled="disabled"
+    @click="handleClick"
   >
     <SpinnerIcon v-if="isLoading" />
     
@@ -32,6 +32,16 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    }
+  },
+  emits: ['click'],
+  methods: {
+    handleClick () {
+      if (this.disabled) {
+        return;
+      }
+
+      this.$emit('click');
     }
   }
 };

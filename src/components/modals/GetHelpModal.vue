@@ -12,15 +12,22 @@
         v-text="$t('title')"
       />
 
-      <div class="flex flex-col gap-5">
+      <form
+        class="flex flex-col gap-5"
+        @submit.prevent
+      >
         <Input
           v-model="v$.formData.name.$model"
+          name="name"
+          required
           class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('name')"
         />
 
         <Input
           v-model="v$.formData.email.$model"
+          name="email"
+          required
           class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('email')"
         />
@@ -28,17 +35,21 @@
         <Input
           v-model="v$.formData.phone.$model"
           v-maska="'+38 (###) ### ## ##'"
+          name="phone"
+          required
           class="h-10 text-base sm:text-lg sm:h-15"
           :placeholder="$t('phone')"
         />
 
         <textarea
           v-model="formData.message"
+          name="message"
           :placeholder="$t('message')"
           class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-base sm:text-lg"
         />
 
         <BtnPrimary
+          type="submit"
           :title="$t('send')"
           class="h-15"
           :disabled="v$.formData.$invalid"
@@ -50,7 +61,7 @@
           class="h-15 border border-primary bg-white text-primary hover:bg-white hover:border-primary-hover hover:text-primary-hover"
           @click="closeModal"
         />
-      </div>
+      </form>
     </div>
   </ModalLayout>
 </template>
@@ -74,6 +85,7 @@ export default {
     Input
   },
   mixins: [modalMixin],
+  emits: ['success'],
   setup () {
     return { v$: useVuelidate() };
   },
@@ -93,7 +105,8 @@ export default {
       try {
         this.isLoading = true;
         await ApiCall.sendMail(this.formData);
-        this.showModal();
+        this.$emit('success');
+        this.closeModal();
       } catch (e) {
         this.showError = true;
       } finally {

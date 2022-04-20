@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
   lintOnSave: 'warning',
-  devServer: {
-    proxy: 'http://localhost:8888/for_life/'
-  },
+  // devServer: {
+  //   proxy: 'http://localhost:8888/for_life/'
+  // },
 
   chainWebpack: config => {
     config.module

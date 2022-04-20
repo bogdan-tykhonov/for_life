@@ -4,12 +4,8 @@ import vClickOutside from 'click-outside-vue3';
 import Maska from 'maska';
 import {router} from './router';
 import i18n from './i18n';
-import mitt from 'mitt';
-const emitter = mitt();
 
 
 const app = createApp(App).use(i18n).use(router).use(vClickOutside).use(Maska);
-app.config.globalProperties.emitter = emitter;
-
 app.mount('#app');
 

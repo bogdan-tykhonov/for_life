@@ -24,7 +24,10 @@
       </div>
     </section>
  
-    <HelpSection class="mt-8" />
+    <HelpSection
+      class="mt-8"
+      @show-get-help-modal="showHelpModalHandler"
+    />
 
     <Subtitle
       class="my-8"
@@ -91,15 +94,21 @@
       />
     </BlockLayout>
 
+    <GetHelpModal
+      ref="helpModal"
+      @success="showSuccessModal"
+    />
+
     <SuccessModal
       ref="successModal"
-      :title="$t('modal_title')"
-      :subtitle="$t('modal_subtitle')"
+      :title="$t('success_modal_title')"
+      :subtitle="$t('success_modal_subtitle')"
     />
   </div>
 </template>
 
 <script>
+import SuccessModal from '../components/modals/SuccessModal.vue';
 import SquaredImage from '../components/ui/SquaredImage';
 import TelegramIcon from '../components/icons/TelegramIcon';
 import BlockLayout from '../components/home/BlockLayout';
@@ -107,6 +116,7 @@ import Documents from '../components/home/Documents';
 import Subtitle from '../components/ui/Subtitle';
 import HelpSection from '../components/home/HelpSection';
 import stopWarImg from '../img/stop.jpeg';
+import GetHelpModal from '../components/modals/GetHelpModal';
 
 export default { 
   name: 'Home',
@@ -116,12 +126,22 @@ export default {
     Documents,
     BlockLayout,
     TelegramIcon,
-    SquaredImage
+    SquaredImage,
+    GetHelpModal,
+    SuccessModal
   },
   data () {
     return {
       stopWarImg: stopWarImg
     };
+  },
+  methods: {
+    showHelpModalHandler () {
+      this.$refs.helpModal.showModal();
+    },
+    showSuccessModal () {
+      this.$refs.successModal.showModal();
+    }
   }
 };
 </script>
@@ -134,7 +154,7 @@ export default {
     "main_text2": "Окремо кожен з нас- це маленька краплина дощу, але всі разом ми станемо зливою, що змиє ворога з нашої землі.",
     "main_text3": "Украіна – це кожен із нас",
     "reports": "Звіти",
-    "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду"
+    "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду",
   },
   "en": {
     "ukraine_is_us": "All of us are Ukraine!",

@@ -20,10 +20,15 @@
 
     <!-- Desktop -->
     <BlockLayout class="hidden sm:flex">
-      <BtnPrimary
-        class="lg:text-4xl !h-17"
-        :title="$t('want_help')"
-      />
+      <router-link
+        :to="{name: 'Contacts'}"
+        class="!h-17 block w-full"
+      >
+        <BtnPrimary
+          class="w-full !h-full lg:text-4xl "
+          :title="$t('want_help')"
+        />
+      </router-link>
 
       <BtnPrimary
         class="lg:text-4xl !h-17"
@@ -46,9 +51,10 @@ export default {
     Subtitle,
     BlockLayout
   },
+  emits: ['show-get-help-modal'],
   methods: {
     showGetHelpModal () {
-      this.emitter.emit('show-get-help-modal');
+      this.$emit('show-get-help-modal');
     }
   }
 };

@@ -26,10 +26,12 @@
         </ul>
 
         <div class="flex gap-5">
-          <BtnPrimary
-            class="!text-base xl:!text-lg w-42 xl:w-45"
-            :title="$t('want_help')"
-          />
+          <router-link :to="{name: 'Contacts'}">
+            <BtnPrimary
+              class="!text-base xl:!text-lg w-42 xl:w-45"
+              :title="$t('want_help')"
+            />
+          </router-link>
 
           <LocaleSelect />
         </div>

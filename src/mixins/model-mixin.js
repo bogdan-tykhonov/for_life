@@ -1,13 +1,13 @@
 export default {
   props: {
-    value: {
+    modelValue: {
       required: true 
     }
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
   data () {
     return {
-      model: this.value
+      model: this.modelValue
     };
   },
   watch: {
@@ -16,7 +16,7 @@ export default {
     },
 
     model (val) {
-      this.$emit('input', val);
+      this.$emit('update:modelValue', val);
     }
   }
 };

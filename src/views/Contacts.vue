@@ -50,12 +50,16 @@
       <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-6">
         <Input
           v-model="v$.formData.name.$model"
+          required
+          name="name"
           class="!text-lg sm:!text-xl"
           :placeholder="$t('name')"
         />
 
         <Input
           v-model="v$.formData.email.$model"
+          required
+          name="email"
           class="!text-lg sm:!text-xl"
           :placeholder="$t('email')"
         />
@@ -63,6 +67,8 @@
         <Input
           v-model="v$.formData.phone.$model"
           v-maska="'+38 (###) ### ## ##'"
+          required
+          name="phone"
           class="!text-lg sm:!text-xl"
           :placeholder="$t('phone')"
         />
@@ -70,6 +76,7 @@
 
       <textarea
         v-model="formData.message"
+        name="message"
         :placeholder="$t('message')"
         class="pt-4 mb-6 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg !text-lg sm:!text-xl"
       />
@@ -90,8 +97,8 @@
 
     <SuccessModal
       ref="successModal"
-      :title="$t('modal_title')"
-      :subtitle="$t('modal_subtitle')"
+      :title="$t('success_modal_title')"
+      :subtitle="$t('success_modal_subtitle')"
     />
   </section>
 </template>
@@ -304,8 +311,6 @@ export default {
       "email": "Ваш e-mail*",
       "message": "Повідомлення",
       "send": "Надіслати",
-      "modal_title": "Ваша заявка успішно відправлена!",
-      "modal_subtitle": "Найближчим часом з вами зв'яжеться наша команда"
     },
     "en": {
       "write_us": "Write us",
