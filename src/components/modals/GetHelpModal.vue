@@ -48,10 +48,17 @@
           class="pt-4 h-29 placeholder:text-gray-border w-full pl-3 focus:ring-1 outline-none ring-primary bg-white border border-gray-border rounded-lg text-base sm:text-lg"
         />
 
+        <ErrorAlert
+          v-if="showError"
+          class="my-2"
+          :error="$t('error_try_again')"
+        />
+
         <BtnPrimary
           type="submit"
           :title="$t('send')"
           class="h-15"
+          :is-loading="isLoading"
           :disabled="v$.formData.$invalid"
           @click="sendForm"
         />
@@ -59,7 +66,7 @@
         <BtnPrimary
           :title="$t('cancel')"
           class="h-15 border border-primary bg-white text-primary hover:bg-white hover:border-primary-hover hover:text-primary-hover"
-          @click="closeModal"
+          @click="cancel"
         />
       </form>
     </div>
@@ -67,6 +74,7 @@
 </template>
 
 <script>
+import ErrorAlert from '../ui/ErrorAlert.vue';
 import Input from '../ui/Input';
 import useVuelidate from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
@@ -82,7 +90,8 @@ export default {
   components: {
     ModalLayout,
     BtnPrimary,
-    Input
+    Input,
+    ErrorAlert
   },
   mixins: [modalMixin],
   emits: ['success'],
@@ -96,7 +105,9 @@ export default {
         email: '',
         phone: '',
         message: ''
-      }
+      },
+      isLoading: false,
+      showError: false
     };
   },
   methods: {
@@ -106,12 +117,27 @@ export default {
         this.isLoading = true;
         await ApiCall.sendMail(this.formData);
         this.$emit('success');
+        this.resetData();
         this.closeModal();
       } catch (e) {
         this.showError = true;
       } finally {
         this.isLoading = false;
       }
+    },
+    cancel () {
+      this.resetData();
+      this.closeModal();
+    },
+    resetData () {
+      this.formData = {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      };
+
+      this.showError = false;
     }
   },
   validations: {

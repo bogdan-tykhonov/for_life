@@ -90,6 +90,7 @@
       <BtnPrimary
         :title="$t('send')"
         class="sm:max-w-[380px]"
+        :is-loading="isLoading"
         :disabled="v$.formData.$invalid"
         @click="sendForm"
       />
@@ -274,16 +275,29 @@ export default {
     },
 
     async sendForm () {
+      this.isLoading = true;
       this.showError = false;
       try {
         this.isLoading = true;
-        await ApiCall.sendMail(this.formData);
+        //await ApiCall.sendMail(this.formData);
+        this.resetData();
         this.showModal();
       } catch (e) {
         this.showError = true;
       } finally {
         this.isLoading = false;
       }
+    },
+
+    resetData () {
+      this.formData = {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      };
+
+      this.showError = false;
     }
   },
   validations: {

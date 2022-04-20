@@ -11,7 +11,7 @@ export default {
     };
   },
   watch: {
-    value (val) {
+    modelValue (val) {
       this.model = val;
     },
 

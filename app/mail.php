@@ -25,6 +25,7 @@
   ';
 
   $headers[] = 'To: Mary <bogdan.v.t@ukr.net';
+  $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
   $result = mail($to, $subject, $mail_message, implode("\r\n", $headers));
 

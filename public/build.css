@@ -586,6 +586,11 @@ input::-webkit-outer-spin-button,
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: calc(0.5 * var(--rem, 16px));
+  margin-bottom: calc(0.5 * var(--rem, 16px));
+}
+
 .mt-8 {
   margin-top: calc(2 * var(--rem, 16px));
 }
