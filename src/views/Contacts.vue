@@ -132,8 +132,12 @@ export default {
       paymentConfig: {
         'EUR': [
           {
-            name: 'Legal entity',
+            name: 'Beneficiary',
             value: 'CO "CF "UKRAINE IS ALL OF US"'
+          },
+          {
+            name: 'Beneficiary address',
+            value: '9, district 297, Kremenchug, Ukraine, 39600'
           },
           {
             name: 'Enterprise code',
@@ -157,7 +161,7 @@ export default {
               UKRSIBBANK<br>
               ANDRIIVSKA STREET 2/12<br>
               KYIV, UKRAINE<br>
-              SWIFT code: KHABUA2K<br>
+              SWIFT code: KHABUA2KXXX<br>
               `
           },
           {
@@ -166,7 +170,7 @@ export default {
             value: `
               BNP PARIBAS SA<br>
               Paris, FRANCE<br>
-              SWIFT-код: BNPAFRPP<br>
+              SWIFT-код: BNPAFRPPXXX<br>
               `
           },
           {
@@ -176,8 +180,12 @@ export default {
         ],
         'USD': [
           {
-            name: 'Legal entity',
+            name: 'Beneficiary',
             value: 'CO "CF "UKRAINE IS ALL OF US"'
+          },
+          {
+            name: 'Beneficiary address',
+            value: '9, district 297, Kremenchug, Ukraine, 39600'
           },
           {
             name: 'Enterprise code',
@@ -201,7 +209,7 @@ export default {
               UKRSIBBANK<br>
               ANDRIIVSKA STREET 2/12<br>
               KYIV, UKRAINE<br>
-              SWIFT code: KHABUA2K<br>
+              SWIFT code: KHABUA2KXXX<br>
               `
           },
           {
@@ -210,7 +218,7 @@ export default {
             value: `
              BNP PARIBAS U.S.A. - New York Branch<br>
               New York, USA<br>
-              SWIFT-код: BNPAUS3N<br>
+              SWIFT-код: BNPAUS3NXXX<br>
             `
           },
           {
