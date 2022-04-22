@@ -64,7 +64,7 @@
         >
           <p
             class="p-3 sm:p-10 font-bold text-lg sm:text-4xl"
-            v-text="$t('help')"
+            v-text="$t('population_assistance')"
           />
         </SquaredImage>
       </router-link>
@@ -77,7 +77,7 @@
       :title="$t('reports')"
     />
 
-    <BlockLayout class="sm:!px-10 text-2xl lg:text-4xl font-bold !gap-4 text-center lg:text-left lg:!gap-30 items-center flex-col-reverse lg:flex-row">
+    <BlockLayout class="sm:!px-10 text-2xl lg:text-4xl font-bold !gap-8 text-center lg:text-left lg:!gap-30 items-center flex-col-reverse lg:flex-row">
       <a
         class="w-[300px] h-18"
         href="https://t.me/forlife_ua"
@@ -152,7 +152,7 @@ export default {
     "ukraine_is_us": "УКРАЇНА – ЦЕ ВСІ МИ!",
     "main_text": "24го лютого о пятій годині ранку життя кожного українця змінилось назавжди.  Наші серця болять за кожен куточок нашої Батьківщини.",
     "main_text2": "Окремо кожен з нас- це маленька краплина дощу, але всі разом ми станемо зливою, що змиє ворога з нашої землі.",
-    "main_text3": "Украіна – це кожен із нас",
+    "main_text3": "Украіна – це кожен із нас!",
     "reports": "Звіти",
     "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду",
   },
@@ -160,7 +160,7 @@ export default {
     "ukraine_is_us": "All of us are Ukraine!",
     "main_text": "On February 24, at five o'clock in the morning lifes of every Ukrainians changed forever. Our hearts ache for every parts of our Motherland.", 
     "main_text2": "Each of us is a small drop of the rain but together we are the downpour that will wash away the enemy from our land",
-    "main_text3": "Ukraine - is each of us",
+    "main_text3": "Ukraine - is each of us!",
     "reports": "Reports",
     "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
   }

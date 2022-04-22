@@ -101,7 +101,7 @@ export default {
   {
     "ua": {
       "our_links": "Ми у соцмережах:",
-      "fond_name": "Благодійний фонд “УКРАЇНА - ЦЕ ВСІ МИ”"
+      "fond_name": "БО 'БФ' УКРАЇНА - ЦЕ ВСІ МИ"
     },
     "en": {
       "our_links": "We in social medias:",

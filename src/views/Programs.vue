@@ -8,7 +8,7 @@
     />
 
     <ul
-      class="list-disc flex flex-col gap-2 mt-4"
+      class="list-disc flex flex-col gap-2 mt-4 pl-4"
       v-html="$t('help_list')"
     />
 

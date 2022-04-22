@@ -183,7 +183,7 @@ export default {
           },
           {
             name: 'Purpose of payment',
-            value: 'Charitable donation to'
+            value: 'Charitable donation to CO “CF “UKRAINE IS ALL OF US”'
           }
         ],
         'USD': [
@@ -231,7 +231,7 @@ export default {
           },
           {
             name: 'Purpose of payment',
-            value: 'Charitable donation to'
+            value: 'Charitable donation to CO “CF “UKRAINE IS ALL OF US”'
           }
         ],
         'UAH': [
@@ -257,7 +257,7 @@ export default {
           },
           {
             name: 'Призначення платежу',
-            value: 'Благодійна пожертва на'
+            value: 'Благодійний внесок для БО “БФ “УКРАЇНА ЦЕ ВСІ МИ”'
           }
         ],
         'USDT': [

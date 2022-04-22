@@ -15,7 +15,8 @@ export default createI18n({
       'military_help': 'Допомога військовим',
       'error_try_again': 'Сталася помилка, спробуйте ще раз',
       'success_modal_title': 'Ваша заявка успішно відправлена!',
-      'success_modal_subtitle': 'Найближчим часом з вами зв\'яжеться наша команда'
+      'success_modal_subtitle': 'Найближчим часом з вами зв\'яжеться наша команда',
+      'population_assistance': 'Допомога населенню'
     },
     en: {
       'want_help': 'Want to help',
@@ -28,7 +29,8 @@ export default createI18n({
       'military_help': 'Military help',
       'error_try_again': 'An error occurred, try again',
       'success_modal_title': 'Your form has successfully sent!',
-      'success_modal_subtitle': 'Our team will contact you soon'
+      'success_modal_subtitle': 'Our team will contact you soon',
+      'population_assistance': 'Assistance to the population'
     }
   }
 });

@@ -581,14 +581,14 @@ input::-webkit-outer-spin-button,
   margin-bottom: calc(2 * var(--rem, 16px));
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-2 {
   margin-top: calc(0.5 * var(--rem, 16px));
   margin-bottom: calc(0.5 * var(--rem, 16px));
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mt-8 {
@@ -866,6 +866,10 @@ input::-webkit-outer-spin-button,
   gap: calc(0.75 * var(--rem, 16px));
 }
 
+.\!gap-8 {
+  gap: calc(2 * var(--rem, 16px)) !important;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1052,6 +1056,10 @@ input::-webkit-outer-spin-button,
 
 .pl-3 {
   padding-left: calc(0.75 * var(--rem, 16px));
+}
+
+.pl-4 {
+  padding-left: calc(1 * var(--rem, 16px));
 }
 
 .pt-25 {
