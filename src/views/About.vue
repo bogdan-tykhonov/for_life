@@ -71,7 +71,7 @@ export default {
       "ukraine_is_us": "УКРАЇНА - ЦЕ ВСІ МИ"
     },
     "en": {
-      "about_text_1": "“All of us are Ukraine” is volonteer comunity which was founded by Olga Dudnichenko and Andriy Goryachkin",
+      "about_text_1": "“- is volonteer comunity which was founded by Olga Dudnichenko and Andriy Goryachkin",
       "about_text_2": "As for now, our team unites 25 people. Starting from the first days of the war, they help for those who is in need.",
       "about_text_3": "We purchase kit, equipment and medicines for the Armed Forces of Ukraine. We collect humanitarian aid for civilians. We are evacuating people whose normal lives ruined by russian federation at our own expense.",
       "about_text_4": "All payments that we got we spend for needs of the Armed Forces and humanitarian aid. ",
