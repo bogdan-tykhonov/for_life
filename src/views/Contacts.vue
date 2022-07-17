@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-4 sm:pt-8 ">
+  <section>
     <section class="grid lg:grid-cols-2 gap-6 lg:gap-13">
       <div
         v-for="(currency, key) in paymentConfig"

@@ -32,6 +32,22 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
+  .project-content p {
+    @apply text-lg sm:text-xl my-4;
+  }
+
+  .project-content h3 {
+    @apply text-lg sm:text-xl my-5 font-bold;
+  }
+
+  .gallery .pswp__img {
+    @apply !w-auto max-w-full !h-auto !max-h-[90vh] inset-0 m-auto;
+  }
+
+  .gallery .pswp__zoom-wrap {
+    @apply !w-full !h-full;
+  }
 }
 
 @layer components {
@@ -45,16 +61,6 @@
     @apply overflow-hidden;
   }
 }
-
-/* transition animations */
-
-/* .hamburger-enter-from {
-  @apply -translate-x-full
-}
-
-.hamburger-enter-from {
-  @apply -translate-x-full
-} */
 
 .modal-enter-from {
   @apply opacity-0;

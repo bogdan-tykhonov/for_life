@@ -1,3 +1,35 @@
+<script setup>
+import 'photoswipe/dist/photoswipe.css';
+import 'vue3-carousel/dist/carousel.css';
+import ApiCall from '@api';
+import useGallery from '@hooks/useGallery';
+import useAsync from '@hooks/useAsync';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+
+import Skeleton from '../ui/Skeleton';
+import BlockLayout from './BlockLayout';
+import Subtitle from '../ui/Subtitle';
+import { computed, ref } from 'vue';
+
+const documents = ref([]);
+const gallery = computed(() => {
+  return documents.value.map(doc => {
+    return {
+      url: doc.documentImage.url
+    };
+  });
+});
+
+const {showSlider, itemsToShow, initSwiper, openImage} = useGallery(gallery);
+const fetchDocumentsHandler = useAsync(async () => {
+  const {data: {data: {allDocuments}}} = await ApiCall.getDocuments();
+  documents.value = allDocuments;
+  initSwiper();
+});
+
+fetchDocumentsHandler.execute();
+</script>
+
 <template>
   <section>
     <Subtitle :title="$t('documents')" />
@@ -8,7 +40,7 @@
         mode="out-in"
       >
         <div
-          v-if="isLoading"
+          v-if="fetchDocumentsHandler.isLoading"
           key="skeletons"
           class="flex gap-3 justify-center w-full"
         >
@@ -25,12 +57,12 @@
           :items-to-show="itemsToShow"
         >
           <Slide
-            v-for="(document, index) in documents"
+            v-for="(document, index) in gallery"
             :key="`document${index}`"
             class="p-3 cursor-pointer hover:scale-90 transition-transform duration-300"
             @click="openImage(index)"
           >
-            <img :src="document.documentImage.url">
+            <img :src="document.url">
           </Slide>
 
           <template #addons>
@@ -45,10 +77,10 @@
           class="flex gap-3 justify-center w-full"
         >
           <img
-            v-for="(document, index) in documents"
+            v-for="(document, index) in gallery"
             :key="`document${index}`"
             class="cursor-pointer w-1/3 md:w-1/5 max-w-50 hover:scale-90 transition-transform duration-300"
-            :src="document.documentImage.url"
+            :src="document.url"
             @click="openImage(index)"
           >
         </div>
@@ -57,104 +89,3 @@
   </section>
 </template>
 
-<script>
-import 'photoswipe/dist/photoswipe.css';
-import 'vue3-carousel/dist/carousel.css';
-import ApiCall from '@api';
-import PhotoSwipe from 'photoswipe';
-import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-
-import Skeleton from '../ui/Skeleton';
-import DocImg from '../../img/doc.jpeg';
-import BlockLayout from './BlockLayout';
-import Subtitle from '../ui/Subtitle';
-
-export default {
-  name: 'Documents',
-  components: {
-    Subtitle,
-    BlockLayout,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-    Skeleton
-
-  },
-  data () {
-    return {
-      docImg: DocImg,
-      lightbox: null,
-      isLoading: false,
-      documents: [],
-      isMobile: window.innerWidth <= 768
-    };
-  },
-  computed: {
-    showSlider () {
-      return this.documents.length > 5 || (this.isMobile && this.documents.length > 3);
-    },
-
-    itemsToShow () {
-      return this.isMobile ? 3 : 5;
-    }
-  },
-  mounted () {
-    this.fetchDocuments();
-  },
-  unmounted () {
-    if (this.lightbox) {
-      this.lightbox.destroy();
-      this.lightbox = null;
-    }
-  },
-  methods: {
-    initSwiper () {
-      const images = this.documents.map(doc => {
-        return {
-          src: doc.documentImage.url,
-          width: 700,
-          height: 1000
-        };
-      });
-
-      this.lightbox = new PhotoSwipeLightbox({
-        dataSource: images,
-        pswpModule: PhotoSwipe
-      });
-
-      this.lightbox.init();
-    },
-
-    async fetchDocuments () {
-      try {
-        this.isLoading = true;
-        const {data: {data: {allDocuments}}} = await ApiCall.getDocuments();
-        this.documents = allDocuments;
-        this.initSwiper();
-      } catch (e) {
-        console.error(e);
-      } finally {
-        this.isLoading = false;
-      }
-    },
-
-    openImage (slideIndex) {
-      console.log(slideIndex);
-      this.lightbox.loadAndOpen(slideIndex);
-    }
-  }
-};
-</script>
-
-<i18n>
-{
-  "ua": {
-    "documents": "Документи"
-  },
-  "en": {
-    "documents": "Documents"
-  }
-}
-</i18n>

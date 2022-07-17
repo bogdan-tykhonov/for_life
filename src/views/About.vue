@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-4 sm:pt-10">
+  <section>
     <Subtitle :title="$t('about')" />
 
     <p

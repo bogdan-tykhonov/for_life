@@ -29,6 +29,19 @@ export const router = createRouter({
       name: 'Contacts',
       component: () => import('./views/Contacts')
     },
+    { 
+      path: '/projects',
+      name: 'Projects',
+      component: () => import('./views/Projects')
+    },
+    { 
+      path: '/project/:projectId',
+      name: 'ProjectView',
+      component: () => import('./views/ProjectView'),
+      props: route => ({
+        id: Number(route.params.projectId)
+      })
+    },
     {
       path: '/:pathMatch(.*)*',
       redirect: '/home'

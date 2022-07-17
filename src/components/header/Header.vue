@@ -3,7 +3,7 @@
     <Container class="flex justify-between lg:justify-start lg:flex-col xl:flex-row items-center gap-5 xl:gap-10">
       <router-link
         :to="{name: 'Home'}"
-        class="w-1/2 sm:w-auto max-w-full"
+        class="w-1/2 sm:w-auto max-w-62"
       >
         <LogoIcon class="w-full" />
       </router-link>
@@ -13,7 +13,7 @@
           <li
             v-for="(link, index) in routes"
             :key="`navLink${index}`"
-            class="xl:text-xl font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
+            class="text-lg font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200"
             :class="{'text-primary hover:!opacity-100 ': link.active}"
           >
             <router-link
@@ -83,6 +83,11 @@ export default {
           active: this.$route.name === 'Programs'
         },
         {
+          name: 'Projects',
+          label: this.$t('projects'),
+          active: this.$route.name === 'Projects'
+        },
+        {
           name: 'About',
           label: this.$t('about'),
           active: this.$route.name === 'About'
@@ -112,9 +117,11 @@ export default {
   {
     "ua": {
       "main": "Головна",
+      "projects": "Проекти"
     },
     "en": {
       "main": "Main",
+      "projects": "Projects"
     }
   }
 </i18n>

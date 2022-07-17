@@ -43,7 +43,8 @@
         class="flex items-end rounded-md overflow-hidden w-full hover:scale-90 transition-transform duration-300"
       >
         <SquaredImage
-          class="flex items-end bg-[url('./img/programe_1.jpeg')]"
+          class="flex items-end"
+          image="./img/programe_1.jpeg"
         >
           <p
             class="p-3 sm:p-10 font-bold text-lg sm:text-4xl"
@@ -60,7 +61,8 @@
         class="flex items-end rounded-md overflow-hidden w-full hover:scale-90 transition-transform duration-300"
       >
         <SquaredImage
-          class="flex items-end bg-[url('./img/programe_2.jpeg')]"
+          class="flex items-end"
+          image="./img/programe_2.jpeg"
         >
           <p
             class="p-3 sm:p-10 font-bold text-lg sm:text-4xl"
@@ -94,6 +96,35 @@
       />
     </BlockLayout>
 
+    <Subtitle
+      class="my-8"
+      :title="$t('our_partners')"
+    />
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-20">
+      <a
+        href="http://www.irf.ua/"
+        target="blank"
+        class="hover:scale-90 transition-transform duration-300"
+      >
+        <img
+          :src="fondImg1"
+          alt="Міжнародний Фонд «Відродження»"
+        >
+      </a>
+
+      <a
+        href="https://www.care.de/"
+        target="blank"
+        class="hover:scale-90 transition-transform duration-300"
+      >
+        <img
+          :src="fondImg2"
+          alt="Ocare"
+        >
+      </a>
+    </div>
+
     <GetHelpModal
       ref="helpModal"
       @success="showSuccessModal"
@@ -117,6 +148,8 @@ import Subtitle from '../components/ui/Subtitle';
 import HelpSection from '../components/home/HelpSection';
 import stopWarImg from '../img/stop.jpeg';
 import GetHelpModal from '../components/modals/GetHelpModal';
+import fondImg1 from '@/img/fond_logo_1.svg';
+import fondImg2 from '@/img/fond_logo_2.svg';
 
 export default { 
   name: 'Home',
@@ -132,7 +165,9 @@ export default {
   },
   data () {
     return {
-      stopWarImg: stopWarImg
+      stopWarImg: stopWarImg,
+      fondImg1,
+      fondImg2
     };
   },
   methods: {
@@ -155,6 +190,7 @@ export default {
     "main_text3": "Украіна – це кожен із нас!",
     "reports": "Звіти",
     "reports_text": "Ми активно ведемо наш телеграм канал для того, щоб ви могли стежити за роботою нашого фонду",
+    "our_partners": "Наші партнери"
   },
   "en": {
     "ukraine_is_us": "All of us are Ukraine!",
@@ -162,7 +198,8 @@ export default {
     "main_text2": "Each of us is a small drop of the rain but together we are the downpour that will wash away the enemy from our land",
     "main_text3": "Ukraine - is each of us!",
     "reports": "Reports",
-    "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund"
+    "reports_text": "We are actively running our telegram channel so that you can follow the work of our fund",
+    "our_partners": "Our partners"
   }
 }
 </i18n>

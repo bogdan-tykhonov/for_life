@@ -35,6 +35,35 @@ export default {
     });
   
     return await datoCms.post('/', query);
+  },
+
+  async getProjects () {
+    const query = JSON.stringify({
+      query: `{
+        allProjects {
+          id
+          _allTitleLocales {
+            value
+            locale
+          }
+          _allContentLocales {
+            locale
+            value {
+              value
+            }
+          }
+          image {
+            url(imgixParams: {auto: format })
+          }
+          gallery {
+            url(imgixParams: {auto: format })
+          }
+        }
+      }`
+    });
+  
+    const { data: { data: {allProjects} } } = await datoCms.post('/', query);
+    return allProjects;
   }
 };
 

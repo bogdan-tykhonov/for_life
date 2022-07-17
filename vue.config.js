@@ -2,10 +2,6 @@ const path = require('path');
 
 module.exports = {
   lintOnSave: 'warning',
-  // devServer: {
-  //   proxy: 'http://localhost:8888/for_life/'
-  // },
-
   chainWebpack: config => {
     config.module
       .rule('i18n')
@@ -16,9 +12,8 @@ module.exports = {
     config.resolve.alias
       .set('@mixins', path.resolve(__dirname, 'src/mixins'))
       .set('@images', path.resolve(__dirname, 'src/img'))
-      .set('@api', path.resolve(__dirname, 'src/api'));
-    config.devServer
-
+      .set('@api', path.resolve(__dirname, 'src/api'))
+      .set('@hooks', path.resolve(__dirname, 'src/hooks'));
   },
 
   pluginOptions: {
