@@ -93,7 +93,6 @@ watch(locale, () => {
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-20">
           <a
             href="http://www.irf.ua/"
-            target="blank"
             class="hover:scale-90 transition-transform duration-300"
           >
             <img
@@ -104,7 +103,6 @@ watch(locale, () => {
 
           <a
             href="https://www.care.de/"
-            target="blank"
             class="hover:scale-90 transition-transform duration-300"
           >
             <img
